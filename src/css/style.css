@@ -1,0 +1,139 @@
+body {
+  display: grid;
+  place-content: center;
+  margin: 40px;
+  overflow: hidden;
+  background: var(--clr-neutral-800);
+  color: var(--clr-primary-500);
+  font-family: var(--ff-primary);
+  font-weight: var(--ff-semi-bold);
+}
+
+.nft {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+  background: var(--clr-neutral-700);
+  box-shadow: 0 25px 10px 10px var(--clr-neutral-800),
+    0 30px 10px 30px var(--clr-neutral-800);
+  padding: 25px;
+  border-radius: 10px;
+  gap: 28px;
+  position: relative;
+}
+.nft::after {
+  content: "";
+  position: absolute;
+  width: 85%;
+  bottom: 80px;
+  height: 1px;
+  background: var(--clr-neutral-600);
+}
+
+.nft .nft__name {
+  color: var(--clr-neutral-100);
+  font-weight: var(--fw-bold);
+  font-size: 23px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out;
+}
+.nft .nft__name:hover {
+  color: var(--clr-primary-400);
+}
+
+.nft .nft__description {
+  font-size: 18px;
+  font-weight: var(--fw-light);
+}
+
+.nft .nft__img {
+  border-radius: 10px;
+}
+
+.nft .nft__link:before {
+  content: "";
+  background: url(../images/icon-view.svg) no-repeat center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: none;
+  border-radius: 10px;
+}
+
+.nft .nft__link:after {
+  content: "";
+  background-color: var(--clr-primary-400);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.4;
+  display: none;
+  overflow: hidden;
+  border-radius: 10px;
+}
+.nft .nft__link:hover:before,
+.nft .nft__link:hover:after {
+  display: block;
+}
+
+.nft .nft__link {
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+}
+
+.nft .flex-group {
+  display: inline-flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.nft .flex-group .nft__price {
+  color: var(--clr-primary-400);
+  font-weight: var(--fw-bold);
+  margin-left: 22px;
+  position: relative;
+}
+.nft .flex-group .nft__price[data-icon="etherum-nft"]::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  width: 11px;
+  height: 18px;
+  background-image: url(../images/icon-ethereum.svg);
+}
+.nft .flex-group .nft__expiration {
+  font-weight: var(--ff-semi-bold);
+  position: relative;
+  margin-right: 5px;
+}
+.nft .flex-group .nft__expiration[data-icon="clock-timer"]::before {
+  content: "";
+  position: absolute;
+  left: -22px;
+  top: 2px;
+  width: 17px;
+  height: 17px;
+  background-image: url(../images/icon-clock.svg);
+}
+
+.nft .nft__creator {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-weight: var(--fw-light);
+}
+.nft__creator .nft__creator-picture {
+  max-width: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--clr-neutral-100);
+  cursor: alias;
+}
+
+.nft__creator .nft__creator-name {
+  color: var(--clr-neutral-100);
+  transition: color 0.3s ease-in-out;
+}
+.nft__creator .nft__creator-name:hover {
+  color: var(--clr-primary-400);
+}

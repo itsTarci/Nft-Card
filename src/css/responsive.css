@@ -1,0 +1,5 @@
+@media (max-width: 500px) {
+  .nft {
+    box-shadow: 0 10px 10px 15px var(--clr-neutral-800);
+  }
+}
